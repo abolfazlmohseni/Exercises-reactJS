@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="conteyner"></div>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+        class Name extends React.Component {
+            render() {
+                return <div>
+                    <label htmlFor="name">name:</label>
+                    <input type="text" name="name" />
+                </div>
+            }
+        }
+        class LastName extends React.Component {
+            render() {
+                return <div>
+                    <label htmlFor="name">lastName:</label>
+                    <input type="text" name="lastName" />
+                </div>
+            }
+        }
+        class SubmitBTN extends React.Component {
+            render() {
+                return <input type="submit" value="login" />
+            }
+        }
+
+
+
+
+        class Form extends React.Component {
+            render() {
+                return <div className="form">
+                    <form>
+                        <Name />
+                        <LastName />
+                        <SubmitBTN />
+                    </form>
+                </div>
+            }
+        }
+        ReactDOM.render(<Form />, document.querySelector(".conteyner"))
+
+
+
+    </script>
+</body>
+
+</html>
