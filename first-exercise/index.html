@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>first exercise</title>
+</head>
+
+<body>
+
+    <div class="conteyner"></div>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+        const name = prompt("enter your name")
+        function AddInput() {
+            return <div className="test">
+                <input type="text" placeholder="Enter your name" />
+            </div>
+        }
+        function AddButton() {
+            return <div className="test">
+                <button>Click me</button>
+            </div>
+        }
+        function Test() {
+            return <div className="FromReact">
+                <p>helo {name}</p>
+                <AddInput />
+                <AddButton />
+            </div>
+
+
+
+        }
+        ReactDOM.render(<Test />, document.querySelector('.conteyner'));
+    </script>
+
+
+
+</body>
+
+</html>
