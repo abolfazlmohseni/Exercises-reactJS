@@ -1,0 +1,19 @@
+.rows {
+    width: 90%;
+    margin: 1rem auto 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.listItem {
+    width: 25%;
+    height: 150px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.cartText {
+    font-size: 18px;
+}
