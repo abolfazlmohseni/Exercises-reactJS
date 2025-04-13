@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Loding from "./loding";
+import checkip from "./getData";
 import "./style.css";
+import Card from "./card";
 export default class CheckIp extends Component {
   constructor(props) {
     super(props);
@@ -16,21 +18,9 @@ export default class CheckIp extends Component {
       },
     };
   }
-
-  async getIp() {
-    const response = await fetch("https://api.ipify.org?format=json");
-    return (await response.json()).ip;
-  }
-
-  async checkip() {
-    const ip = await this.getIp();
-    const userdata = await fetch(`http://ipwhois.app/json/${ip}`);
-    return userdata;
-  }
-
   componentDidMount() {
     try {
-      this.checkip().then((res) => {
+      checkip().then((res) => {
         res.json().then((rezalt) => {
           this.setState({ data: rezalt });
         });
@@ -45,23 +35,6 @@ export default class CheckIp extends Component {
       return <Loding />;
     }
 
-    return (
-      <div className="card-container">
-        <span className="info">Info</span>
-        <img
-          className="round"
-          src={this.state.data.country_flag}
-          alt={this.state.data.country}
-        />
-        <h3>{this.state.data.country}</h3>
-        <h6>{this.state.data.city}</h6>
-        <p>isp: {this.state.data.isp}</p>
-        <div className="footer">
-          <p>IP: {this.state.data.ip}</p>
-          <p>latitude: {this.state.data.latitude}</p>
-          <p>longitude: {this.state.data.longitude}</p>
-        </div>
-      </div>
-    );
+    return <Card data={this.state.data}/>;
   }
 }
