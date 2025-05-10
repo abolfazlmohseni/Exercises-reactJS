@@ -8,6 +8,7 @@ const Map = ({ handelselectcuntry }) => {
       src={worldimag}
       name="world-map"
       areas={world.areas}
+      width={800}
       onClick={(e) => handelselectcuntry(e.name)}
     />
   );
