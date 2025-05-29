@@ -1,0 +1,27 @@
+menu {
+    width: 95%;
+    margin: 1rem auto 0;
+    background-color: #fff;
+    filter: drop-shadow(1px 1px 10px #00000050);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 8px;
+}
+
+.menu-right h2 {
+    margin: 0;
+    margin-right: 10px;
+}
+
+.menu-left {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.menu-left__item a {
+    color: #000;
+    text-decoration: none;
+}

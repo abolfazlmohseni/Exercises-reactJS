@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import Abute from "./pages/abute/abute";
+import Router from "./router/Router";
+import Home from "./pages/home"
+import Contact from "./pages/contact"
+import Blog from "./pages/blog"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+    return (
+        <>
+            <Router path={"/"}>
+                <Home />
+            </Router>
+            <Router path={"/abute"}>
+                <Abute />
+            </Router>
+            <Router path={"/contact"}>
+                <Contact />
+            </Router>
+            <Router path={"/blog"}>
+                <Blog />
+            </Router>
+
+        </>
+
+
+    );
 }
 
 export default App;

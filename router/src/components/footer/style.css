@@ -1,0 +1,26 @@
+footer {
+    width: 95%;
+    background-color: #fff;
+    margin: 0.5rem auto 0;
+    filter: drop-shadow(1px 1px 10px #00000050);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-right {
+    margin-right: 10px;
+}
+
+.footer-left {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.footer-left__item a {
+    color: #000;
+    text-decoration: none;
+}
