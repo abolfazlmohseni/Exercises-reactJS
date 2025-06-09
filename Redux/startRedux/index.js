@@ -1,24 +1,26 @@
-const createStore = (redcuer) => {
-    let state
-    let listeners = []
+import { createStore } from 'https://unpkg.com/redux/dist/redux.browser.mjs';
 
-    const dispatch = (action) => {
-        state = redcuer(state, action)
-        listeners.forEach(listener => listener())
-    }
-    const getState = () => state
+// const createStore = (redcuer) => {
+//     let state
+//     let listeners = []
 
-    const subscribe = (listener) => {
-        listeners.push(listener)
+//     const dispatch = (action) => {
+//         state = redcuer(state, action)
+//         listeners.forEach(listener => listener())
+//     }
+//     const getState = () => state
 
-        return () => {
-            listeners = listeners.filter(l => l !== listener)
-        }
-    }
-    dispatch({})
+//     const subscribe = (listener) => {
+//         listeners.push(listener)
 
-    return { dispatch, getState, subscribe }
-}
+//         return () => {
+//             listeners = listeners.filter(l => l !== listener)
+//         }
+//     }
+//     dispatch({})
+
+//     return { dispatch, getState, subscribe }
+// }
 
 function counter(state = 0, action) {
     switch (action.type) {
@@ -32,11 +34,10 @@ function counter(state = 0, action) {
 }
 
 const store = createStore(counter)
-
-const unSubscribe = store.subscribe(() => console.log(store.getState()))
-
-store.dispatch({ type: 'INCREMENT' })
-store.dispatch({ type: 'INCREMENT' })
-store.dispatch({ type: 'INCREMENT' })
-unSubscribe()
-store.dispatch({ type: 'DECREMENT' })
+const render = ()=> document.body.innerText =store.getState()
+const unSubscribe = store.subscribe(render)
+render()
+// store.dispatch({ type: 'INCREMENT' })
+// store.dispatch({ type: 'INCREMENT' })
+// store.dispatch({ type: 'INCREMENT' })
+// store.dispatch({ type: 'INCREMENT' })
